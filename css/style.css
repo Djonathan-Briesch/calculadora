@@ -1,98 +1,94 @@
-@charset "UTF_8";
-
-:root{
-    --var-cor1: #A757F2;
-    --var-cor2: #7B40B3;
-    --var-cor3: #462566;
-    --var-cor4: #4F2973;
-    --var-cor5: #351C4D;
-    --var-cor6: #fff;
-    --var-cor7: #000;
-    
-}
+@charset "UTF-8";
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: helvetica, Arial, sans-serif;
 }
 
-body, div#conteiner {
+body {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(to left bottom, var(--var-cor2), var(--var-cor7));
-}
-
-div#conteiner {
+    background-color: rgb(65, 65, 65);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main{
-    height: 520px;  
-    width: 330px;
-    padding: 25px;
-    background-color: var(--var-cor7);
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
-}
-/************************************************/
-/*  CABEÇALHO DA CALCULADORA*/
-section#conteinerHead {
-    margin-bottom: 10px;
-    padding: 20px;
-    text-align: center;
-    text-shadow: 1px 1px 1px black;
-    border-radius: 5px;
-    background-color: var(--var-cor4);
-    color: var(--var-cor6);   
+main {
+    width: 400px;
+    margin: 10px;
+    padding: 12px 8px;
+    background-color: #c4c4c4;
+    color: black;
+    box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
 }
 
-section#conteinerHead h1 {
-    font-size: 2.3em;
+h1 {
+    color: #777; 
+    font-size: .99em;
 }
 
-input#resultado {
-    height: 40px;
-    width: 235px;
-    margin-top: 20px;
-    background-color: var(--var-cor6);
+div#operacoes{
+    text-align: right;
+    margin: 0px 0px 12px 0px;
+    padding: 8px 8px 0px 8px;
 }
-/************************************************/
-/*ORGANIZAÇÃo DOS BOTÕES*/
-section#conteinerButtons{
-    height: 300px;
-    margin: 20px 0px 0px 0px;
+
+#operacao-anterior,#operacao-atual{
+    overflow-wrap: break-word;
+    min-height: 1.6em;
+}
+
+div#operacao-anterior {
+    color: #777;    
+}
+
+div#operacao-atual {
+    font-size: 2em;
+    font-weight: 700;   
+}
+
+div#buttons-conteiner{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 2px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
 }
 
-#btn-mais{
-    grid-column: 4/5;
-    grid-row: 2/5;
-}
-
-#btn-igual {
-    grid-column: 4/5;
-    grid-row: 5/7;
-    
-}
-/************************************************/
-/* ESTILIZAÇÃO DOS BOTÕES*/
-button{
-    padding: 10px;
-    background-color: var(--var-cor7);
-    color: var(--var-cor6);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+#buttons-conteiner button {
+    border: 1px solid transparent;
+    border-radius: 0px;
+    height: 4em;
+    font-size: 1.1em;
     cursor: pointer;
+    user-select: none;
+    background-color: #DBDBDB;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-button:hover{
-    background-color: rgba(255, 255, 255, 0.2);
+#buttons-conteiner button:hover{
+    background-color: #bababa;
+    border: #999;
+    transition: .1S;
 }
 
-button#btn-igual:hover{
-    background-color: rgba(0, 191, 255, 0.3);
+#buttons-conteiner .btn-numero {
+    background-color: #f3f3f3;
+}
+
+#buttons-conteiner #btn-igual {
+    background-color: #92dbfd;
+}
+
+#buttons-conteiner #btn-igual:hover {
+    background-color: #87cfec;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background: linear-gradient(45deg, black, grey);
+    }
 }
